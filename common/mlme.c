@@ -5157,11 +5157,11 @@ bool RTMPCheckHt(
 		pAd->MlmeAux.HtCapability.ExtHtCapInfo.PlusHTC = 1;
 	}
 
-    if (pAd->MlmeAux.HtCapability.HtCapInfo.ChannelWidth == BW_20)
-        pAd->MlmeAux.HtCapability.MCSSet[4] = 0x0;  /* BW20 can't transmit MCS32*/
+	if (pAd->MlmeAux.HtCapability.HtCapInfo.ChannelWidth == BW_20)
+		pAd->MlmeAux.HtCapability.MCSSet[4] = 0x0;  /* BW20 can't transmit MCS32*/
 
 	if (pAd->chipCap.FlgHwTxBfCap)
-	    setETxBFCap(pAd, &pAd->MlmeAux.HtCapability.TxBFCap);
+		setETxBFCap(pAd, &pAd->MlmeAux.HtCapability.TxBFCap);
 
 	COPY_AP_HTSETTINGS_FROM_BEACON(pAd, pHtCap);
 	return true;

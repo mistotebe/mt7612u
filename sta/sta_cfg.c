@@ -421,11 +421,11 @@ INT Set_EncrypType_Proc(struct rtmp_adapter *pAd, char *arg)
     else
         return false;
 
-	if (pAd->StaCfg.BssType == BSS_ADHOC)
-	{
-		/* Build all corresponding channel information */
-		RTMPSetPhyMode(pAd, pAd->CommonCfg.cfg_wmode);
-	}
+    if (pAd->StaCfg.BssType == BSS_ADHOC)
+    {
+        /* Build all corresponding channel information */
+        RTMPSetPhyMode(pAd, pAd->CommonCfg.cfg_wmode);
+    }
 
     DBGPRINT(RT_DEBUG_TRACE, ("Set_EncrypType_Proc::(EncrypType=%d)\n", wdev->WepStatus));
 
@@ -1567,17 +1567,17 @@ RtmpIoctl_rt_ioctl_siwfreq(
 		MAP_KHZ_TO_CHANNEL_ID( freq , chan); /* Setting by frequency - search the table , like 2.412G, 2.422G, */
 	}
 
-    if (ChannelSanity(pAd, chan) == true)
-    {
+	if (ChannelSanity(pAd, chan) == true)
+	{
 	pAd->CommonCfg.Channel = chan;
 		/* Save the channel on MlmeAux for CntlOidRTBssidProc used. */
 		pAd->MlmeAux.Channel = pAd->CommonCfg.Channel;
 		/*save connect info*/
 		pAd->StaCfg.ConnectinfoChannel = pAd->CommonCfg.Channel;
 	DBGPRINT(RT_DEBUG_ERROR, ("==>rt_ioctl_siwfreq::SIOCSIWFREQ(Channel=%d)\n", pAd->CommonCfg.Channel));
-    }
-    else
-        return NDIS_STATUS_FAILURE;
+	}
+	else
+		return NDIS_STATUS_FAILURE;
 
 	return NDIS_STATUS_SUCCESS;
 }

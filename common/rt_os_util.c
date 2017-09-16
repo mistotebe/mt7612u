@@ -42,16 +42,16 @@ VOID RtmpDrvRateGet(
 		return;
 	}
 
-    if (MODE >= MODE_VHT)
-    {
+	if (MODE >= MODE_VHT)
+	{
 		if(MCS_1NSS > 9)
 		{
 			Antenna = (MCS / 10)+1;
 			MCS_1NSS %= 10;
 		}
         *pRate = RalinkRate_VHT_1NSS[BW][ShortGI][MCS_1NSS];
-    }
-    else
+	}
+	else
 
 	if ((MODE >= MODE_HTMIX) && (MODE < MODE_VHT))
 	{
@@ -71,7 +71,7 @@ VOID RtmpDrvRateGet(
 
 
 	*pRate *= 500000;
-    if (MODE >= MODE_HTMIX)
+	if (MODE >= MODE_HTMIX)
 		*pRate *= Antenna;
 
 	DBGPRINT(RT_DEBUG_TRACE,("=====> %s \nMODE: %x shortGI: %x BW: %x MCS: %x Antenna: %x  Rate = %d\n"

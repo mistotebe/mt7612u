@@ -1888,8 +1888,8 @@ VOID StaQuickResponeForRateUpExecAdapt(
 	pEntry = &pAd->MacTab.Content[i];
 	pTable = pEntry->pTable;
 
-    if (QuickInitMCSRate(pAd,pEntry) == true)
-        return;
+	if (QuickInitMCSRate(pAd,pEntry) == true)
+		return;
 
 	if (pAd->MacTab.Size == 1)
 	{

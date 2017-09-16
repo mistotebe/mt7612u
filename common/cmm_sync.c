@@ -439,7 +439,7 @@ CHAR ConvertToRssi(struct rtmp_adapter *pAd, CHAR Rssi, u8 rssi_idx)
 	if (IS_RT8592(pAd))
 		return (Rssi - LNAGain - RssiOffset);
 
-		return (BaseVal - RssiOffset - LNAGain - Rssi);
+	return (BaseVal - RssiOffset - LNAGain - Rssi);
 }
 
 
